@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bacteria 3D en RA</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.0.1/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item id="bacteriaModel" src="bacteria.glb"></a-asset-item>
+        <a-asset-item id="bacteriaModel2" src="bacteria2.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Bacteria principal al frente -->
+      <a-entity
+        gltf-model="#bacteriaModel"
+        scale="0.06 0.06 0.06"
+        animation-mixer
+        position="0 1 -2">
+      </a-entity>
+
+      <!-- Segunda bacteria detrás (en dirección opuesta) -->
+      <a-entity
+        gltf-model="#bacteriaModel2"
+        scale="0.05 0.05 0.05"
+        animation-mixer
+        position="0 1 2">
+      </a-entity>
+
+      <a-marker-camera></a-marker-camera>
+    </a-scene>
+  </body>
+</html>
+
